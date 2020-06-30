@@ -7,13 +7,13 @@ for (var i = 0; i < 16; i++) {
 console.log(computer);
 
 i=0;
-count = 0;
+count = 0; //numero di giocate del giocatore prima di decretare il verdetto
 do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
     user.push(userNumber);
     count ++;
     i++;
-} while (!isInarray(userNumber, computer) && i<5);
+} while (!isInarray(userNumber, computer) && i<5); // i<5 condizione momentanea di DEBUG
 
 console.log(user);
 console.log(count);
