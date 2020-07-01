@@ -18,11 +18,14 @@ if (level==2) {
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
-    if (isInarray(userNumber, user)) {
-         alert("numero gia' esistente! inserisci un altro numero");
-    } else {
-        user.push(userNumber); 
-    }
+    if (userNumber < 1 || userNumber > 50 || isNaN(userNumber)) {
+        alert("inserisci solo numeri e che non siano superiori o minori al massimo scelto");
+            var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
+   } else if (isInarray(userNumber, user)) {
+       alert("numero gia' esistente! inserisci un altro numero");
+       var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
+   }
+    user.push(userNumber); 
     count ++;
     i++;
     } while (!isInarray(userNumber, computer) && i<5);
@@ -41,11 +44,14 @@ if (level==2) {
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
-    if (isInarray(userNumber, user)) {
-         alert("numero gia' esistente! inserisci un altro numero");
-    } else {
-        user.push(userNumber); 
-    }
+    if (userNumber < 1 || userNumber > 80 || isNaN(userNumber)) {
+        alert("inserisci solo numeri e che non siano superiori o minori al massimo scelto");
+        var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
+   } else if (isInarray(userNumber, user)) {
+       alert("numero gia' esistente! inserisci un altro numero");
+       var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
+   }
+    user.push(userNumber); 
     count ++;
     i++;
     } while (!isInarray(userNumber, computer) && i<5);
@@ -64,31 +70,20 @@ if (level==2) {
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
-    if (isInarray(userNumber, user)) {
-         alert("numero gia' esistente! inserisci un altro numero");
-    } else {
-        user.push(userNumber); 
+    if (userNumber < 1 || userNumber > 100 || isNaN(userNumber)) {
+         alert("inserisci solo numeri e che non siano superiori o minori al massimo scelto");
+             var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
+    } else if (isInarray(userNumber, user)) {
+        alert("numero gia' esistente! inserisci un altro numero");
+        var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
     }
+    user.push(userNumber); 
     count ++;
     i++;
     } while (!isInarray(userNumber, computer) && i<5);
 }
 
 console.log(computer);
-
-// i=0;
-// count = 0; //numero di giocate del giocatore prima di decretare il verdetto
-// do {
-//     var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
-//     if (isInarray(userNumber, user)) {
-//          alert("numero gia' esistente! inserisci un altro numero");
-//     } else {
-//         user.push(userNumber); 
-//     }
-//     count ++;
-//     i++;
-// } while (!isInarray(userNumber, computer) && i<5); // i<5 condizione momentanea di DEBUG
-
 console.log(user);
 
 
@@ -99,6 +94,7 @@ if (isInarray(userNumber, computer)) {
 }
 
 // FUNZIONI 
+
 function random(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
