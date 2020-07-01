@@ -81,7 +81,7 @@ console.log(user);
 
 if (isInArray(userNumber, computer)) {
     document.getElementById('result').innerHTML = "HAI PERSO";
-    document.getElementById('count').innerHTML = "Hai totalizzato " + count + " punti"; 
+    document.getElementById('count').innerHTML = "Hai totalizzato " + "<span class=count>" + count + "</span>" + " punti"; 
 } else {
     document.getElementById('result').innerHTML = "HAI VINTO";
     document.getElementById('count').innerHTML = "Hai totalizzato " + count + " punti";   
