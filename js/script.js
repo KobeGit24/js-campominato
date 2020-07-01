@@ -1,5 +1,7 @@
-alert('CAMPO MINATO !!')
+alert('CAMPO MINATO !!');
+
 var level = parseInt(prompt("inserisci il grado di difficolta': digita 0 (range 1-100) per un grado di difficolta' basso, digita 1 (1-80) per un grado medio, digita 2 (1-50) per un grado alto"));
+
 var computer = [];
 var numMaxComp = 16;
 var numComp = 0;
