@@ -4,40 +4,39 @@ var computer = [];
 var numMaxComp = 16;
 var numComp = 0;
 var user = [];
+var option = 5;
+var levelMax;
 
 if (level==2) {
-    for (var i = 0; i < numMaxComp; i++) {
-        numComp = random(1,50);
+    levelMax=50;
+    while (computer.length < numMaxComp) {
+        numComp = random(1,levelMax);
         if (!isInarray(numComp, computer)) {
             computer.push(numComp);    
-        } else {
-            computer.push(numComp+1);
-        }
+        } 
     } 
 
     i=0;
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
-    if (userNumber < 1 || userNumber > 50 || isNaN(userNumber)) {
+    if (userNumber < 1 || userNumber > levelMax || isNaN(userNumber)) {
         alert("inserisci solo numeri e che non siano superiori o minori al massimo scelto");
-            var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
    } else if (isInarray(userNumber, user)) {
        alert("numero gia' esistente! inserisci un altro numero");
-       var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
+   } else {
+       user.push(userNumber); 
+       count ++;
+       i++;
    }
-    user.push(userNumber); 
-    count ++;
-    i++;
-    } while (!isInarray(userNumber, computer) && i<5);
+    } while (!isInarray(userNumber, computer) && user.length < option);
 
 } else if (level==1) {
-    for (var i = 0; i < numMaxComp; i++) {
-        numComp = random(1,80);
+    levelMax=80;
+    while (computer.length < numMaxComp) {
+        numComp = random(1,levelMax);
         if (!isInarray(numComp, computer)) {
             computer.push(numComp);    
-        } else {
-            computer.push(numComp+1);
         }
     } 
 
@@ -45,25 +44,23 @@ if (level==2) {
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
-    if (userNumber < 1 || userNumber > 80 || isNaN(userNumber)) {
+    if (userNumber < 1 || userNumber > levelMax || isNaN(userNumber)) {
         alert("inserisci solo numeri e che non siano superiori o minori al massimo scelto");
-        var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
    } else if (isInarray(userNumber, user)) {
        alert("numero gia' esistente! inserisci un altro numero");
-       var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
+   } else {
+       user.push(userNumber); 
+       count ++;
+       i++;
    }
-    user.push(userNumber); 
-    count ++;
-    i++;
-    } while (!isInarray(userNumber, computer) && i<5);
+    } while (!isInarray(userNumber, computer) && user.length < option);
 
-} else if (level==0) {
-    for (var i = 0; i < numMaxComp; i++) {
-        numComp = random(1,100);
+} else if (level==0 || isNaN(level)) {
+    levelMax=100;
+    while (computer.length < numMaxComp) {
+        numComp = random(1,levelMax);
         if (!isInarray(numComp, computer)) {
             computer.push(numComp);    
-        } else {
-            computer.push(numComp+1);
         }
     } 
 
@@ -71,17 +68,16 @@ if (level==2) {
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
-    if (userNumber < 1 || userNumber > 100 || isNaN(userNumber)) {
+    if (userNumber < 1 || userNumber > levelMax || isNaN(userNumber) || userNumber == "") {
          alert("inserisci solo numeri e che non siano superiori o minori al massimo scelto");
-             var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
     } else if (isInarray(userNumber, user)) {
         alert("numero gia' esistente! inserisci un altro numero");
-        var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
+    } else {
+        user.push(userNumber); 
+        count ++;
+        i++;
     }
-    user.push(userNumber); 
-    count ++;
-    i++;
-    } while (!isInarray(userNumber, computer) && i<5);
+    } while (!isInarray(userNumber, computer) && user.length < option);
 }
 
 console.log(computer);
