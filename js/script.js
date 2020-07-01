@@ -1,11 +1,12 @@
 alert('CAMPO MINATO !!')
 var level = parseInt(prompt("inserisci il grado di difficolta': digita 0 (range 1-100) per un grado di difficolta' basso, digita 1 (1-80) per un grado medio, digita 2 (1-50) per un grado alto"));
 var computer = [];
+var numMaxComp = 16;
 var numComp = 0;
 var user = [];
 
 if (level==2) {
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < numMaxComp; i++) {
         numComp = random(1,50);
         if (!isInarray(numComp, computer)) {
             computer.push(numComp);    
@@ -31,7 +32,7 @@ if (level==2) {
     } while (!isInarray(userNumber, computer) && i<5);
 
 } else if (level==1) {
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < numMaxComp; i++) {
         numComp = random(1,80);
         if (!isInarray(numComp, computer)) {
             computer.push(numComp);    
@@ -57,7 +58,7 @@ if (level==2) {
     } while (!isInarray(userNumber, computer) && i<5);
 
 } else if (level==0) {
-    for (var i = 0; i < 16; i++) {
+    for (var i = 0; i < numMaxComp; i++) {
         numComp = random(1,100);
         if (!isInarray(numComp, computer)) {
             computer.push(numComp);    
