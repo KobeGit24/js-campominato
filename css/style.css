@@ -4,9 +4,14 @@
     padding: 0;
 }
 
+body {
+    font-family: Arial;
+}
+
 .container {
     height: 100vh;
-    background-color: purple;
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
     border: 5px solid #000000;
     display: flex;
     flex-direction: column;
@@ -17,11 +22,20 @@
 #result {
     padding: 20px;
     color: goldenrod;
-    font-size: 40px;
+    font-size: 80px;
     font-weight: bold;
+    text-shadow: 4px 4px black;
 }
 
-#count {
-    color: #ffffff;
-    font-size: 25px;
+.final {
+    color: whitesmoke;
+    font-size: 42px;
+    text-shadow: 2px 2px black;
+}
+
+.point {
+    color: darkred;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
 }
