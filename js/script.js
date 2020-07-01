@@ -80,9 +80,11 @@ console.log(computer);
 console.log(user);
 
 if (isInArray(userNumber, computer)) {
-    console.log('hai perso!!', 'hai giocato ' + count + ' volte');   
+    document.getElementById('result').innerHTML = "HAI PERSO";
+    document.getElementById('count').innerHTML = "Hai totalizzato " + count + " punti"; 
 } else {
-    console.log('hai vinto!!','hai giocato ' + count + ' volte');   
+    document.getElementById('result').innerHTML = "HAI VINTO";
+    document.getElementById('count').innerHTML = "Hai totalizzato " + count + " punti";   
 }
 
 // FUNZIONI 
