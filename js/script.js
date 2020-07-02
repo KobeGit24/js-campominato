@@ -21,7 +21,6 @@ if (level>=2) {
     count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
-    var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
     if (isInRange(1,levelMax,userNumber) || isInArray(userNumber, user)) {
      alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");} 
     else {
@@ -41,7 +40,7 @@ if (level>=2) {
 
     count = 0;
     do {
-        var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
+        var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
         if (isInRange(1,levelMax,userNumber) || isInArray(userNumber, user)) {
          alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");} 
         else {
