@@ -9,7 +9,7 @@ var user = [];
 var option = 5; // quantita' di giocate valide
 var levelMax; // massimale di ogni range a seconda della scelta dell'utente
 
-if (level==2) {
+if (level>=2) {
     levelMax=50;
     while (computer.length < numMaxComp) {
         numComp = random(1,levelMax);
