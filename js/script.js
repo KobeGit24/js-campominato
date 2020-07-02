@@ -18,14 +18,12 @@ if (level>=2) {
         } 
     } 
 
-    count = 0; //numero di giocate del giocatore prima di decretare il verdetto
     do {
     var userNumber = parseInt(prompt('inserisci un numero da 1 a 50'));
     if (isInRange(1,levelMax,userNumber) || isInArray(userNumber, user)) {
      alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");} 
     else {
-    user.push(userNumber); 
-    count ++;
+    user.push(userNumber);
     }
     } while (!isInArray(userNumber, computer) && user.length < option);
 
@@ -36,16 +34,14 @@ if (level>=2) {
         if (!isInArray(numComp, computer)) {
             computer.push(numComp);    
         }
-    } 
+    }
 
-    count = 0;
     do {
         var userNumber = parseInt(prompt('inserisci un numero da 1 a 80'));
         if (isInRange(1,levelMax,userNumber) || isInArray(userNumber, user)) {
          alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");} 
         else {
-        user.push(userNumber); 
-        count ++;
+        user.push(userNumber);
     }
     } while (!isInArray(userNumber, computer) && user.length < option);
 
@@ -58,27 +54,22 @@ if (level>=2) {
         }
     } 
 
-    count = 0;
     do {
         var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
         if (isInRange(1,levelMax,userNumber) || isInArray(userNumber, user)) {
          alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");} 
         else {
         user.push(userNumber); 
-        count ++;
     }
     } while (!isInArray(userNumber, computer) && user.length < option);
 }
 
-console.log(computer);
-console.log(user);
-
 if (isInArray(userNumber, computer)) {
     document.getElementById('result').innerHTML = "HAI PERSO !!";
-    document.getElementById('count').innerHTML = "Hai totalizzato " + "<span class=point>" + count + "</span>" + " punti"; 
+    document.getElementById('count').innerHTML = "Hai totalizzato " + "<span class=point>" + (user.length -1) + "</span>" + " punti"; 
 } else {
     document.getElementById('result').innerHTML = "HAI VINTO !!";
-    document.getElementById('count').innerHTML = "Hai totalizzato " + "<span class=point>" + count + "</span>" + " punti";   
+    document.getElementById('count').innerHTML = "Hai totalizzato " + "<span class=point>" + user.length + "</span>" + " punti";   
 }
 
 // FUNZIONI 
