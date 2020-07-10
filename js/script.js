@@ -57,8 +57,8 @@ if (level>=2) {
     do {
         var userNumber = parseInt(prompt('inserisci un numero da 1 a 100'));
         if (isInRange(1,levelMax,userNumber) || isInArray(userNumber, user)) {
-         alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");} 
-        else {
+         alert("ATTENZIONE!! Inserisci solo numeri consentiti e diversi da quelli gia' inseriti");
+        } else {
         user.push(userNumber); 
     }
     } while (!isInArray(userNumber, computer) && user.length < option);
